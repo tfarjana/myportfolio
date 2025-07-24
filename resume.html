@@ -1,188 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tanvin Farjana - Cybersecurity Resume</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cybersecurity Resume - Tanvin Farjana</title>
   <style>
     :root {
-      --bg-color: #121212;
-      --text-color: #e0e0e0;
-      --heading-color: #ffffff;
-      --section-bg: #1e1e1e;
-      --link-color: #4db8ff;
+      --bg-color: #ffffff;
+      --text-color: #1f1f1f;
+      --header-bg: #00796b;
+      --header-text: #ffffff;
+      --highlight-border: #004d40;
+      --highlight-bg: #e0f2f1;
     }
 
-    body.light-mode {
-      --bg-color: #f4f4f4;
-      --text-color: #333;
-      --heading-color: #2c3e50;
-      --section-bg: #ffffff;
-      --link-color: #007acc;
+    body.dark-mode {
+      --bg-color: #1e1e1e;
+      --text-color: #f5f5f5;
+      --header-bg: #004d40;
+      --header-text: #ffffff;
+      --highlight-border: #80cbc4;
+      --highlight-bg: #263238;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
-      margin: 40px;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
       transition: background-color 0.3s, color 0.3s;
     }
-
     .container {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 30px;
-      background-color: var(--section-bg);
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      padding: 2rem;
     }
-
-    h1, h2 {
-      color: var(--heading-color);
-    }
-
     h1 {
-      font-size: 32px;
-      margin-bottom: 5px;
+      color: #000000;
     }
-
-    .contact-info {
-      font-size: 14px;
-      color: var(--text-color);
-      margin-bottom: 20px;
+    h2, h3 {
+      color: #004d40;
     }
-
-    ul {
-      padding-left: 20px;
+    .header {
+      background-color: var(--header-bg);
+      color: var(--header-text);
+      padding: 2rem;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
     }
-
-    strong {
-      color: var(--heading-color);
-    }
-
     .section {
-      margin-top: 30px;
+      margin: 2rem 0;
     }
-
-    a {
-      color: var(--link-color);
-      text-decoration: none;
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.2rem;
     }
-
-    a:hover {
-      text-decoration: underline;
+    ul {
+      padding-left: 1.2rem;
     }
-
-    .button-bar {
+    .two-column {
       display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-      margin-bottom: 20px;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
-
-    .button-bar button {
-      padding: 8px 16px;
-      background-color: var(--link-color);
-      border: none;
-      color: white;
+    .two-column > div {
+      width: 48%;
+    }
+    .highlight {
+      background-color: var(--highlight-bg);
+      padding: 1rem;
+      margin-top: 1rem;
+      border-left: 4px solid var(--highlight-border);
+    }
+    .subsection {
+      margin-bottom: 1rem;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    .toggle-buttons {
+      text-align: center;
+      margin: 1rem 0;
+    }
+    .toggle-buttons button {
+      margin: 0.5rem;
+      padding: 0.5rem 1.2rem;
+      font-size: 1rem;
       cursor: pointer;
-      border-radius: 6px;
-      transition: background-color 0.2s ease;
+      border: none;
+      background-color: #004d40;
+      color: white;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    .toggle-buttons button:hover {
+      background-color: #00695c;
     }
 
-    .button-bar button:hover {
-      background-color: #3399ff;
+    @media print {
+      .toggle-buttons {
+        display: none;
+      }
+      body {
+        background: white;
+        color: black;
+      }
+      .header {
+        background: black;
+        color: white;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="button-bar">
-    <button onclick="toggleMode()">Toggle Light/Dark Mode</button>
-    <button onclick="downloadPDF()">Download as PDF</button>
+  <div class="toggle-buttons">
+    <button onclick="toggleMode()">Toggle Dark/Light Mode</button>
+    <button onclick="window.print()">Download as PDF</button>
   </div>
 
-  <div class="container" id="resume">
+  <div class="header">
     <h1>Tanvin Farjana</h1>
-    <p class="contact-info">
-      Email: <a href="mailto:tfarjana5@gmail.com">tfarjana5@gmail.com</a> |
-      LinkedIn: <a href="@gmail.com">tfarjana5@gmail.com</a> |
-      LinkedIn: <a href="www.linkedin.com/in/tanvin-f-1563a0214" target="_blank">www.linkedin.com/in/tanvin-f-1563a0214</a> |
-      Location: New York, NY
+    <p>
+      Email: <a style="color: inherit; text-decoration: underline;" href="mailto:tfarjana000@gmail.com">tfarjana000@gmail.com</a> |
+      Phone: <a style="color: inherit; text-decoration: underline;" href="tel:">()</a> |
+      Location: New York, NY |
+      <a style="color: inherit; text-decoration: underline;" href="https://www.linkedin.com/in/tanvin-f-1563a0214/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </p>
+  </div>
 
+  <div class="container">
     <div class="section">
-      <h2>Summary</h2>
-      <p>A cybersecurity fellow with hands-on training in network defense, cloud security, and SOC operations.
-        Winner of Bloomberg’s national Hack the Knowledge CTF competition, with a strong foundation in tools like Wireshark, Splunk, and Metasploit.
-        Actively pursuing Network+ and Security+ certifications. Passionate about securing systems, analyzing threats, and growing into a SOC Analyst or Cloud Security role.</p>
+      <h2 class="section-title">Professional Summary</h2>
+      <p>Cybersecurity Analyst trained at The Knowledge House with a strong foundation in cybersecurity best practices, Linux, Windows Terminal, threat detection, and network security tools. Won first place in the 2025 Hack of Knowledge hackathon in collaboration with Bloomberg. Seeking an entry-level cybersecurity analyst role to contribute to securing digital environments and grow within a forward-thinking security team.</p>
+    </div>
+
+    <div class="section two-column">
+      <div>
+        <h2 class="section-title">Technical Skills</h2>
+        <ul>
+          <li>Network Security, Vulnerability Assessment</li>
+          <li>Linux (Ubuntu, Kali), Windows Terminal, Bash</li>
+          <li>Wireshark, Nmap, Metasploit, Burp Suite</li>
+          <li>OWASP Top 10, Secure Coding Practices</li>
+          <li>HTML5, JavaScript</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">Tools & Platforms</h2>
+        <ul>
+          <li>Splunk, GitHub, VirtualBox, VS Code</li>
+          <li>Chrome DevTools, Figma, Git</li>
+          <li>Netcat, Cisco Packet Tracer</li>
+        </ul>
+      </div>
     </div>
 
     <div class="section">
-      <h2>Education</h2>
-      <p>Cybersecurity Innovation Fellowship<br>
-        The Knowledge House, Bronx, NY<br>
-        Expected Graduation: December 2025</p>
+      <h2 class="section-title">Experience</h2>
+      <div class="subsection">
+        <strong>Secretary/Medical Receptionist – Flex Staff/Northwell</strong> | Jan 2025–Current<br />
+        <ul>
+          <li>Handled patient check-ins and appointments using Sorian, TouchWorks, and Health Pay.</li>
+          <li>Managed over 40 calls daily, assisting with scheduling and information.</li>
+          <li>Verified insurance details and securely managed patient data.</li>
+        </ul>
+      </div>
+      <div class="subsection">
+        <strong>Intern – The Jasco Group (CUNY Career Launch)</strong> | Jul 2023–Aug 2024<br />
+        <ul>
+          <li>Researched investments, stock markets, and created performance charts.</li>
+          <li>Drafted LP updates and presented startup/film pitches successfully.</li>
+        </ul>
+      </div>
+      <div class="subsection">
+        <strong>Front Desk – City College of New York</strong> | Jun 2023–Jun 2024<br />
+        <ul>
+          <li>Managed front desk operations and assisted students with scheduling.</li>
+        </ul>
+      </div>
+      <div class="subsection">
+        <strong>Course Support Assistant – CCNY</strong> | Mar 2021–Aug 2022<br />
+        <ul>
+          <li>Edited and posted lecture videos; promoted to team leader for open house/graduation events.</li>
+        </ul>
+      </div>
+      <div class="highlight">
+        <strong>🏆 Hack The Knowledge – Bloomberg CTF Hackathon (1st Place Winner)</strong><br />
+        <ul>
+          <li>Led team in solving real-world security challenges using secure coding and debugging skills.</li>
+        </ul>
+      </div>
     </div>
 
     <div class="section">
-      <h2>Certifications & Training</h2>
+      <h2 class="section-title">Education</h2>
+      <p><strong>The Knowledge House</strong> – Innovation Fellowship in Cybersecurity | Dec 2025</p>
       <ul>
-        <li>Google IT Support Certificate</li>
-        <li>IBM Cybersecurity Badge</li>
-        <li>AWS Cloud Foundations Badge</li>
-        <li>Currently pursuing CompTIA Network+ and Security+</li>
+        <li>400+ hours of training in network security, threat analysis, and secure system configuration.</li>
+        <li>Experience with Linux, Kali, Metasploit, and Wireshark.</li>
+        <li>Hands-on virtual labs, SOC analyst prep, Git/GitHub, and Agile collaboration.</li>
+      </ul>
+      <p><strong>The City College of New York</strong> – B.S. in Chemistry, Minor in Psychology | Jun 2024 (GPA: 3.65)</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Projects</h2>
+      <ul>
+        <li><strong>Static Website with Serverless Contact Form (AWS)</strong>: Built and deployed frontend/backend using S3, Lambda, SES, and API Gateway.</li>
+        <li><strong>Sentiment Analysis Web Tool</strong>: Secure Flask app with SQLite, deployed on EC2 with hardened security and sentiment visualization.</li>
+        <li><strong>Windows Server 2022 & Active Directory Lab</strong>: Configured domain, AD users, GPOs, and automated scripts with PowerShell.</li>
+        <li><strong>Ubuntu Multi-Node Cluster</strong>: Built 3-node cluster in VirtualBox with static IPs, SSH key access, and network testing.</li>
       </ul>
     </div>
 
     <div class="section">
-      <h2>Experience</h2>
-      <p><strong>Cybersecurity Fellow</strong>, The Knowledge House (2023 – Present)<br>
-        - Built and managed multi-VM lab environments using VirtualBox.<br>
-        - Conducted log analysis and threat detection using Wireshark and Splunk.<br>
-        - Performed vulnerability scanning with Nmap and Burp Suite.<br>
-        - Documented simulated incident response cases.</p>
-
-      <p><strong>Healthcare Receptionist / Data Entry Specialist</strong>, [Healthcare Facility]<br>
-        - Managed sensitive patient data (HIPAA compliance).<br>
-        - Provided front-line tech and administrative support.<br>
-        - Strengthened problem-solving and communication skills in fast-paced environments.</p>
-    </div>
-    <div class="section">
-      <h2>Projects</h2>
-      <p><strong>Bloomberg Hack the Knowledge CTF – 1st Place Winner (2025)</strong><br>
-        - Investigated simulated attacks through Wireshark, log analysis, and web vulnerability testing.<br>
-        - Documented findings and presented remediation strategies under time constraints.</p>
-
-      <p><strong>Cybersecurity Home Lab</strong><br>
-        - Created virtual SOC environment for threat hunting and system hardening practice.<br>
-        - Used Kali Linux, Windows Server, and Ubuntu systems for lab simulations.</p>
-    </div>
-
-    <div class="section">
-      <h2>Skills</h2>
-      <p><strong>Technical Skills:</strong> Splunk, Wireshark, Nmap, Metasploit, Burp Suite, Linux (Ubuntu/Kali), Windows Server<br>
-        <strong>Networking:</strong> TCP/IP, DNS, DHCP, Firewalls, VLANs<br>
-        <strong>Scripting:</strong> Python (Beginner), Bash<br>
-        <strong>Soft Skills:</strong> Communication, Attention to Detail, Problem-Solving, Customer Service</p>
+      <h2 class="section-title">Achievements</h2>
+      <ul>
+        <li>1st Place, Hack The Knowledge Hackathon (Bloomberg, 2025)</li>
+        <li>Led deployment of secure, cloud-based solutions using AWS</li>
+        <li>Promoted to Course Assistant Leader for strong team coordination</li>
+      </ul>
     </div>
   </div>
 
   <script>
     function toggleMode() {
-      document.body.classList.toggle('light-mode');
-    }
-
-    function downloadPDF() {
-      const resume = document.getElementById("resume");
-      const opt = {
-        margin: 0.3,
-        filename: 'Taylor_Resume.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-      };
-      html2pdf().from(resume).set(opt).save();
+      document.body.classList.toggle("dark-mode");
     }
   </script>
 </body>
