@@ -1,55 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Tanvin Farjana - Cybersecurity Resume</title>
+  <meta charset="UTF-8">
+  <title>Taylor [Last Name] - Cybersecurity Resume</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --heading-color: #ffffff;
+      --section-bg: #1e1e1e;
+      --link-color: #4db8ff;
+    }
+
+    body.light-mode {
+      --bg-color: #f4f4f4;
+      --text-color: #333;
+      --heading-color: #2c3e50;
+      --section-bg: #ffffff;
+      --link-color: #007acc;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 40px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: var(--section-bg);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    h1, h2 {
+      color: var(--heading-color);
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 5px;
+    }
+
+    .contact-info {
+      font-size: 14px;
+      color: var(--text-color);
+      margin-bottom: 20px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    strong {
+      color: var(--heading-color);
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .button-bar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .button-bar button {
+      padding: 8px 16px;
+      background-color: var(--link-color);
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+    }
+
+    .button-bar button:hover {
+      background-color: #3399ff;
+    }
+  </style>
 </head>
 <body>
-  <h1>Tanvin Farjana</h1>
-  <p>Email: tfarjana5@gmail.com | LinkedIn: www.linkedin.com/in/tanvin-f-1563a0214 | Location: NY,NY</p>
+  <div class="button-bar">
+    <button onclick="toggleMode()">Toggle Light/Dark Mode</button>
+    <button onclick="downloadPDF()">Download as PDF</button>
+  </div>
 
-  <h2>Summary</h2>
-  <p>A cybersecurity fellow with hands-on training in network defense, cloud security, and SOC operations. 
-     Winner of Bloomberg’s national Hack the Knowledge CTF competition, with a strong foundation in tools like Wireshark, Splunk, and Metasploit. 
-     Actively pursuing Network+ and Security+ certifications. Passionate about securing systems, analyzing threats, and growing into a SOC Analyst or Cloud Security role.</p>
+  <div class="container" id="resume">
+    <h1>Taylor [Last Name]</h1>
+    <p class="contact-info">
+      Email: <a href="mailto:taylor@email.com">taylor@email.com</a> |
+      LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a> |
+      Location: New York, NY
+    </p>
 
-  <h2>Education</h2>
-  <p>Cybersecurity Innovation Fellowship<br>
-  The Knowledge House, Bronx, NY<br>
-  Expected Graduation: December 2025</p>
+    <div class="section">
+      <h2>Summary</h2>
+      <p>A cybersecurity fellow with hands-on training in network defense, cloud security, and SOC operations.
+        Winner of Bloomberg’s national Hack the Knowledge CTF competition, with a strong foundation in tools like Wireshark, Splunk, and Metasploit.
+        Actively pursuing Network+ and Security+ certifications. Passionate about securing systems, analyzing threats, and growing into a SOC Analyst or Cloud Security role.</p>
+    </div>
 
-  <h2>Certifications & Training</h2>
-  <ul>
-    <li>Google IT Support Certificate</li>
-    <li>IBM Cybersecurity Badge</li>
-    <li>AWS Cloud Foundations Badge</li>
-    <li>Currently pursuing CompTIA Network+ and Security+</li>
-  </ul>
+    <div class="section">
+      <h2>Education</h2>
+      <p>Cybersecurity Innovation Fellowship<br>
+        The Knowledge House, Bronx, NY<br>
+        Expected Graduation: December 2025</p>
+    </div>
 
-  <h2>Experience</h2>
-  <p>Cybersecurity Fellow, The Knowledge House (2023 – Present)<br>
-  - Built and managed multi-VM lab environments using VirtualBox.<br>
-  - Conducted log analysis and threat detection using Wireshark and Splunk.<br>
-  - Performed vulnerability scanning with Nmap and Burp Suite.<br>
-  - Documented simulated incident response cases.</p>
+    <div class="section">
+      <h2>Certifications & Training</h2>
+      <ul>
+        <li>Google IT Support Certificate</li>
+        <li>IBM Cybersecurity Badge</li>
+        <li>AWS Cloud Foundations Badge</li>
+        <li>Currently pursuing CompTIA Network+ and Security+</li>
+      </ul>
+    </div>
 
-  <p>Healthcare Receptionist / Data Entry Specialist, [Healthcare Facility]<br>
-  - Managed sensitive patient data (HIPAA compliance).<br>
-  - Provided front-line tech and administrative support.<br>
-  - Strengthened problem-solving and communication skills in fast-paced environments.</p>
+    <div class="section">
+      <h2>Experience</h2>
+      <p><strong>Cybersecurity Fellow</strong>, The Knowledge House (2023 – Present)<br>
+        - Built and managed multi-VM lab environments using VirtualBox.<br>
+        - Conducted log analysis and threat detection using Wireshark and Splunk.<br>
+        - Performed vulnerability scanning with Nmap and Burp Suite.<br>
+        - Documented simulated incident response cases.</p>
 
-  <h2>Projects</h2>
-  <p>Bloomberg Hack the Knowledge CTF – 1st Place Winner (2025)<br>
-  - Investigated simulated attacks through Wireshark, log analysis, and web vulnerability testing.<br>
-  - Documented findings and presented remediation strategies under time constraints.</p>
+      <p><strong>Healthcare Receptionist / Data Entry Specialist</strong>, [Healthcare Facility]<br>
+        - Managed sensitive patient data (HIPAA compliance).<br>
+        - Provided front-line tech and administrative support.<br>
+        - Strengthened problem-solving and communication skills in fast-paced environments.</p>
+    </div>
 
-  <p>Cybersecurity Home Lab<br>
-  - Created virtual SOC environment for threat hunting and system hardening practice.<br>
-  - Used Kali Linux, Windows Server, and Ubuntu systems for lab simulations.</p>
+    <div class="section">
+      <h2>Projects</h2>
+      <p><strong>Bloomberg Hack the Knowledge CTF – 1st Place Winner (2025)</strong><br>
+        - Investigated simulated attacks through Wireshark, log analysis, and web vulnerability testing.<br>
+        - Documented findings and presented remediation strategies under time constraints.</p>
 
-  <h2>Skills</h2>
-  <p><strong>Technical Skills:</strong> Splunk, Wireshark, Nmap, Metasploit, Burp Suite, Linux (Ubuntu/Kali), Windows Server<br>
-     <strong>Networking:</strong> TCP/IP, DNS, DHCP, Firewalls, VLANs<br>
-     <strong>Scripting:</strong> Python (Beginner), Bash<br>
-     <strong>Soft Skills:</strong> Communication, Attention to Detail, Problem-Solving, Customer Service</p>
+      <p><strong>Cybersecurity Home Lab</strong><br>
+        - Created virtual SOC environment for threat hunting and system hardening practice.<br>
+        - Used Kali Linux, Windows Server, and Ubuntu systems for lab simulations.</p>
+    </div>
+
+    <div class="section">
+      <h2>Skills</h2>
+      <p><strong>Technical Skills:</strong> Splunk, Wireshark, Nmap, Metasploit, Burp Suite, Linux (Ubuntu/Kali), Windows Server<br>
+        <strong>Networking:</strong> TCP/IP, DNS, DHCP, Firewalls, VLANs<br>
+        <strong>Scripting:</strong> Python (Beginner), Bash<br>
+        <strong>Soft Skills:</strong> Communication, Attention to Detail, Problem-Solving, Customer Service</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('light-mode');
+    }
+
+    function downloadPDF() {
+      const resume = document.getElementById("resume");
+      const opt = {
+        margin: 0.3,
+        filename: 'Taylor_Resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+      html2pdf().from(resume).set(opt).save();
+    }
+  </script>
 </body>
 </html>
