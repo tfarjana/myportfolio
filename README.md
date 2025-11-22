@@ -1,6 +1,6 @@
 # My GitHub Resume Project
-#Link
-# 🔐 Tanvin Farjana  
+# https://tfarjana.github.io/myportfolio/index.html
+# Tanvin Farjana  
 
 ## Cybersecurity & Cloud | SOC Analyst (in training) | CTF Winner  
 
@@ -9,7 +9,7 @@
 
 ---
 
-## 👋 About Me  
+##  About Me  
 
 Hi there! I’m **Tanvin Farjana**, a cybersecurity professional with hands-on training in **threat detection, cloud security, and system hardening** through a 400+ hour technical fellowship.  
 
@@ -19,7 +19,7 @@ In 2025, I earned **1st place in Bloomberg’s “Hack the Knowledge” CTF**, w
 
 ---
 
-## 🧠 Technical Skills  
+##  Technical Skills  
 
 **SOC & Security Tools**  
 - Splunk, Wireshark, Nmap, Burp Suite, Metasploit, Netcat, Cisco Packet Tracer  
@@ -64,58 +64,77 @@ In 2025, I earned **1st place in Bloomberg’s “Hack the Knowledge” CTF**, w
 
 ---
 
-## 🎓 Certifications & Training  
+## Certifications & Training  
 
 - **Google IT Support Certificate**  
 - **IBM Cybersecurity Analyst Badge**  
 - **AWS Cloud Foundations Badge**  
-- 🥇 **1st Place – Bloomberg “Hack the Knowledge” CTF (2025)**  
+-  **1st Place – Bloomberg “Hack the Knowledge” CTF (2025)**  
 - **Currently pursuing:**  
   - CompTIA Network+  
   - AWS Certified Solutions Architect – Associate  
 
 ---
 
-## 🚀 Featured Projects  
+## Featured Projects   
 
-> 🔁 Update the GitHub links once your repos are created.
+>  Update the GitHub links once your repos are created.
 
 | Project | Description | Tools |
 |--------|-------------|-------|
-| [Sentiment Analysis Web Tool](https://github.com/tfarjana/REPO-SENTIMENT-APP) | Secure full-stack journaling app that analyzes and visualizes user sentiment over time, with hardened cloud deployment. | Python, Flask, SQLite, TextBlob, Chart.js, AWS EC2, UFW, SSH, Git |
-| [Static Website with Serverless Contact Form](https://github.com/tfarjana/REPO-SERVERLESS-CONTACT) | Static portfolio-style site hosted on S3 with a fully serverless contact form using Lambda, SES, and API Gateway. | HTML, CSS, JS, AWS S3, Lambda, SES, API Gateway, IAM |
-| [Windows Server 2022 & Active Directory Lab](https://github.com/tfarjana/REPO-WIN-SERVER-AD-LAB) | Multi-server Windows domain environment with AD, DHCP, DNS, and automated user provisioning via PowerShell. | Windows Server 2022, AD DS, DNS, DHCP, PowerShell, VirtualBox |
-| [Ubuntu Multi-Node Cluster](https://github.com/tfarjana/REPO-UBUNTU-CLUSTER) | Secure 3-node Ubuntu cluster with static IPs, passwordless SSH, and firewall rules for controlled internal networking. | Ubuntu, Bash, SSH, UFW, VirtualBox, Netplan |
+| [Umi Nur – Cloud-Native Cybersecurity for Sensitive Healthcare](https://github.com/tfarjana/REPO-UMI-NUR-CAPSTONE) | Group capstone building a privacy-first cloud platform for reproductive & mental health data. Role: cloud/security team member. | AWS VPC, AWS KMS, DynamoDB, Wazuh SIEM, Docker, Nginx + Certbot (HTTPS), Flask, Python |
+| [Sentiment Analysis Web Tool](https://github.com/tfarjana/REPO-SENTIMENT-APP) | Secure full-stack journaling app that analyzes and visualizes user sentiment over time, with a hardened cloud deployment. | Python, Flask, SQLite, TextBlob, Chart.js, AWS EC2 (Ubuntu), UFW, SSH keys, Git |
+| [Static Website with Serverless Contact Form](https://github.com/tfarjana/REPO-SERVERLESS-CONTACT) | Static portfolio-style site hosted on S3 with a fully serverless contact form using Lambda, SES, and API Gateway. | HTML, CSS, JavaScript, AWS S3, Lambda, SES, API Gateway, IAM |
+| [Windows Server 2022 & Active Directory Lab](https://github.com/tfarjana/REPO-WIN-SERVER-AD-LAB) | Multi-server Windows domain environment with AD, DHCP, DNS, and automated user provisioning via PowerShell. | Windows Server 2022, Active Directory, DNS, DHCP, RAS, PowerShell, VirtualBox |
+| [Ubuntu Multi-Node Cluster](https://github.com/tfarjana/REPO-UBUNTU-CLUSTER) | Secure 3-node Ubuntu cluster with static IPs, passwordless SSH, and firewall rules for controlled internal networking. | Ubuntu Server, Bash, SSH, UFW, VirtualBox, Netplan |
 
 ---
 
-## 📁 Project Summaries  
+## Project Summaries  
 
-### 🧩 Sentiment Analysis Web Tool — Secure Web App Project  
+###  Umi Nur – Cloud-Native Cybersecurity for Sensitive Healthcare (Capstone, Team Project)  
 
-- Developed and deployed a **secure journaling web app** using **Python, Flask, SQLite, and TextBlob** to analyze and visualize mood over time.  
-- Hardened an **AWS EC2 Ubuntu instance** with UFW firewall rules, SSH key-only access, and least-privilege configurations to reduce attack surface.  
-- Applied **secure coding practices** (input validation, CSRF protection, parameterized queries) and integrated **Chart.js** for real-time sentiment visualization and private data storage.
+_Group capstone building a privacy-first cloud platform for reproductive and mental health data._  
+**Role:** Cloud/Security team member  
 
-### ☁️ Static Website with Serverless Contact Form — AWS Cloud  
+- **Co-designed**, as part of a team, a cloud-native architecture in a private VPC using domain-segregated AWS KMS keys for women’s and behavioral health data, enforcing defense-in-depth and least-privilege access.  
+- Collaborated with teammates to implement a secure consent workflow where a Flask API encrypts patient consent with AWS KMS and stores it in DynamoDB, while Wazuh SIEM monitors access and modifications for anomalies.  
+- Helped run the Privacy AI Assistant (PAM) and its analysis backend in Docker containers behind HTTPS (`uminur.app`), supporting secure, audit-ready access for staff and patients.  
+- Contributed to compliance dashboards and mappings that tie SIEM alerts and KMS events to HIPAA and NIST controls, producing plain-language summaries for non-technical stakeholders.  
 
-- Designed and deployed a **static website** on **Amazon S3** with a responsive HTML/CSS/JS frontend.  
+---
+
+### Sentiment Analysis Web Tool — Secure Web App Project  
+
+- Developed and deployed a **secure journaling web app** using **Python, Flask, SQLite, and TextBlob** to analyze and visualize user sentiment over time.  
+- Hardened an **AWS EC2 (Ubuntu)** instance with **UFW firewall rules**, **SSH key-only access**, and **least-privilege configurations**, reducing the attack surface.  
+- Applied **secure coding practices** (input validation, CSRF protection, parameterized queries) and integrated **Chart.js** for real-time sentiment visualization and private data storage.  
+
+---
+
+### Static Website with Serverless Contact Form — AWS Cloud  
+
+- Designed and deployed a **static website** on **Amazon S3** with a responsive **HTML/CSS/JS** frontend.  
 - Built a **serverless contact form** using **AWS Lambda, SES, and API Gateway** (with CORS support), enabling real-time email delivery without traditional servers.  
-- Configured **IAM roles** and automated parts of the infrastructure setup to enforce **least privilege**, verify SES identities, and streamline production-ready deployment.
+- Configured **IAM roles** and automated parts of the infrastructure setup to enforce **least privilege**, verify SES identities, and streamline production-ready deployment.  
 
-### 🪟 Windows Server 2022 & Active Directory Lab  
+---
+
+###  Windows Server 2022 & Active Directory Lab  
 
 - Deployed a **multi-server Windows domain environment** with Primary/Replica Domain Controllers, configuring **DHCP, DNS, and RAS** for IP and name resolution.  
 - Automated creation of **70+ Active Directory user accounts** with **PowerShell + CSV**, improving speed and consistency of provisioning.  
-- Joined Windows 10 clients to the domain and applied **Group Policy Objects (GPOs)** to enforce security baselines while troubleshooting replication and scripting issues in a VirtualBox lab.
+- Joined Windows 10 clients to the domain and applied **Group Policy Objects (GPOs)** to enforce security baselines while troubleshooting replication and scripting issues in a VirtualBox lab.  
 
-### 🐧 Ubuntu Multi-Node Cluster Setup (VirtualBox)  
+---
 
-- Built a **secure 3-node Ubuntu server cluster** with NAT and internal networking on the **192.168.1.0/24** subnet, using Netplan for static IPs and hostname resolution.  
+###  Ubuntu Multi-Node Cluster Setup (VirtualBox)  
+
+- Built a **secure 3-node Ubuntu server cluster** with NAT and internal networking on the **192.168.1.0/24** subnet, using **Netplan** for static IPs and hostname resolution.  
 - Automated **passwordless SSH** between control and worker nodes and configured **UFW firewall rules** to restrict access to only required ports.  
-- Used this lab to practice **network testing, remote administration**, and hardening techniques in a Linux environment.
+- Used this lab to practice **network testing, remote administration**, and hardening techniques in a Linux environment.  
 
-### 🏁 Bloomberg Hackathon – Cybersecurity CTF (2025)  
+### Bloomberg Hackathon – Cybersecurity CTF (2025)  
 
 - Secured **1st place** in Bloomberg’s 2025 cyber CTF by identifying and exploiting web application vulnerabilities, then applying **secure coding and remediation strategies**.  
 - Solved real-time **HTML and web security challenges** in a fast-paced team environment, demonstrating strong debugging, problem-solving, and communication skills.  
@@ -123,7 +142,7 @@ In 2025, I earned **1st place in Bloomberg’s “Hack the Knowledge” CTF**, w
 
 ---
 
-## 💼 Professional Experience  
+##  Professional Experience  
 
 ### Cybersecurity Fellow – The Knowledge House (NYC)  
 **Jan 2025 – Present**  
@@ -148,7 +167,7 @@ In 2025, I earned **1st place in Bloomberg’s “Hack the Knowledge” CTF**, w
 
 ---
 
-## 🎓 Education  
+##  Education  
 
 **Cybersecurity & Cloud Fellowship – The Knowledge House**  
 *Jan 2025 – Expected Dec 2025*  
@@ -168,24 +187,24 @@ In 2025, I earned **1st place in Bloomberg’s “Hack the Knowledge” CTF**, w
 
 ---
 
-## 🏆 Highlights  
+##  Highlights  
 
-- 🥇 1st Place – Bloomberg “Hack the Knowledge” CTF (2025)  
+-  1st Place – Bloomberg “Hack the Knowledge” CTF (2025)  
 - Completed 400+ hours of cybersecurity & cloud training  
 - Built end-to-end labs in **Linux, Windows AD, and AWS**  
 - Strong cross-over experience from **customer-facing roles**  
 
 ---
 
-## ⚖️ Ethical & Security Disclaimer  
+##  Ethical & Security Disclaimer  
 
 This portfolio and its associated labs are for **educational and demonstration purposes only**.  
 No real client data, credentials, or sensitive information are used. All environments are **sanitized, simulated, or self-contained**.  
 
 ---
 
-## 📫 Let’s Connect  
+## Let’s Connect  
 
-- 📧 **Email:** [tfarjana000@gmail.com](mailto:tfarjana000@gmail.com)  
-- 💼 **LinkedIn:** [linkedin.com/in/tanvin-f-1563a0214](https://www.linkedin.com/in/tanvin-f-1563a0214/)  
-- 💻 **GitHub:** [github.com/tfarjana](https://github.com/tfarjana)  
+-  **Email:** [tfarjana000@gmail.com](mailto:tfarjana000@gmail.com)  
+-  **LinkedIn:** [linkedin.com/in/tanvin-f-1563a0214](https://www.linkedin.com/in/tanvin-f-1563a0214/)  
+-  **GitHub:** [github.com/tfarjana](https://github.com/tfarjana)  

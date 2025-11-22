@@ -12,32 +12,116 @@
       --bg: #ffffff;
       --text: #1f1f1f;
     }
+  html {
+    scroll-behavior: smooth;
+  }
+    /* shared background + typography */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: var(--bg);
+      background: linear-gradient(135deg, #e0f7f5, #fbe4ec);
       color: var(--text);
       line-height: 1.6;
+      position: relative;
+      min-height: 100vh;
     }
-    header {
-      background: var(--teal);
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("circuit-pattern.png");
+      background-size: 260px 260px;
+      background-repeat: repeat;
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* HERO SECTION (same as index) */
+    .hero {
+      height: 100vh;
+      background-image: url("hero-cyber.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
       color: #ffffff;
-      padding: 1.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 1rem;
     }
-    .wrapper { max-width: 960px; margin: 0 auto; }
-    header h1 { margin: 0; font-size: 1.8rem; }
-    .tagline { margin: 0.3rem 0 0.8rem; font-size: 0.95rem; color: #fdfdfd; }
-    nav a {
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.55),
+        rgba(0, 0, 0, 0.80)
+      );
+    }
+    .hero-content {
+      position: relative;
+      max-width: 700px;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.45);
+      padding: 1.75rem 1.5rem;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .hero-name {
+      font-size: 2.4rem;
+      margin: 0 0 0.4rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .hero-tagline {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+      color: #f1f1f1;
+    }
+    .hero-pill {
+      display: inline-block;
+      background: rgba(224, 242, 241, 0.2);
+      border: 1px solid var(--teal-light);
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin: 0.15rem;
+    }
+    .hero-buttons {
+      margin-top: 1.5rem;
+    }
+    .hero-buttons a {
+      margin-right: 0.5rem;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      background: var(--maroon);
       color: #ffffff;
       text-decoration: none;
-      margin-right: 1rem;
-      font-size: 0.95rem;
     }
-    nav a.active {
-      font-weight: bold;
-      text-decoration: underline;
+    .btn-primary:hover {
+      background: #a00000;
     }
-    main { padding: 2rem 1rem 3rem; }
+
+    /* PAGE CONTENT STYLES (projects layout) */
+    main {
+      padding: 2rem 1rem 3rem;
+    }
     h2.section-title {
       border-bottom: 2px solid var(--maroon);
       padding-bottom: 0.25rem;
@@ -81,99 +165,140 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrapper">
-      <h1>Tanvin Farjana</h1>
-      <p class="tagline">Cybersecurity Projects</p>
-      <nav>
-        <a href="index.html">About</a>
-        <a href="projects.html" class="active">Projects</a>
-        <a href="experience.html">Experience</a>
-      </nav>
-    </div>
-  </header>
 
+  <!-- HERO / WELCOME (shared across all pages) -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-tagline">Welcome to my cybersecurity portfolio</p>
+      <h2 class="hero-name">Tanvin Farjana</h2>
+      <p class="hero-tagline">
+        Aspiring Cybersecurity Analyst · Linux &amp; Active Directory · Cloud Security Learner
+      </p>
+      <div>
+        <span class="hero-pill">CTF Winner (Bloomberg 2025)</span>
+        <span class="hero-pill">Linux</span>
+        <span class="hero-pill">Windows AD</span>
+        <span class="hero-pill">AWS</span>
+      </div>
+      <div class="hero-buttons">
+        <a href="index.html#about" class="btn-primary">Home</a>
+        <a href="projects.html#projects" class="btn-primary">Projects</a>
+        <a href="experience.html#experience" class="btn-primary">Experience</a>
+      </div>
+    </div>
+  </section>
+    <!-- PAGE CONTENT -->
   <main>
     <div class="wrapper">
-      <section>
-        <h2 class="section-title">Featured Projects</h2>
+          <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
 
-        <div class="project">
-          <h3>Static Website with Serverless Contact Form (AWS)</h3>
-          <p><em>Security-focused serverless website with email contact workflow.</em></p>
-          <p>
-            <span class="pill">AWS S3</span>
-            <span class="pill">Lambda</span>
-            <span class="pill">SES</span>
-            <span class="pill">API Gateway</span>
-            <span class="pill">IAM</span>
-            <span class="pill">HTML</span>
-            <span class="pill">CSS</span>
-          </p>
-          <ul>
-            <li>Hosted a static website on S3 with a serverless contact form powered by Lambda and SES.</li>
-            <li>Used API Gateway over HTTPS so messages are encrypted in transit.</li>
-            <li>Applied IAM least-privilege roles so the Lambda function only accesses the resources it needs.</li>
-          </ul>
-          <p><a class="link" href="#" target="_blank" rel="noopener noreferrer">Project link coming soon</a></p>
-        </div>
+<!-- Umi Nur – Cloud-Native Cybersecurity Capstone (Team Project) -->
+<div class="project">
+  <h3>Umi Nur – Cloud-Native Cybersecurity for Sensitive Healthcare (Capstone, Team Project)</h3>
+  <p><em>Group capstone building a privacy-first cloud platform for reproductive and mental health data. Role: cloud/security team member.</em></p>
+  <p>
+    <span class="pill">AWS VPC</span>
+    <span class="pill">AWS KMS</span>
+    <span class="pill">DynamoDB</span>
+    <span class="pill">Wazuh SIEM</span>
+    <span class="pill">Flask API</span>
+    <span class="pill">Python</span>
+    <span class="pill">Docker</span>
+    <span class="pill">Nginx + Certbot (HTTPS)</span>
+    <span class="pill">PAM AI Assistant</span>
+  </p>
+  <ul>
+    <li><strong>Co-designed</strong>, as part of a team, a cloud-native architecture in a private VPC using domain-segregated KMS keys for women’s and behavioral health data, enforcing defense-in-depth and least-privilege access.</li>
+    <li>Collaborated with teammates to implement a secure consent workflow where a Flask API encrypts consent with AWS KMS and stores it in DynamoDB, with Wazuh SIEM monitoring access and modifications for anomalies.</li>
+    <li>Helped run the Privacy AI Assistant (PAM) and its analysis backend in Docker containers behind HTTPS (uminur.app), supporting secure, audit-ready access for staff and patients.</li>
+    <li>Contributed to compliance dashboards and mappings that tie SIEM alerts and KMS events to HIPAA and NIST controls, producing plain-language summaries for non-technical stakeholders.</li>
+  </ul>
+</div>
 
-        <div class="project">
-          <h3>Sentiment Analysis Web Tool</h3>
-          <p><em>Flask-based journaling app with basic security controls.</em></p>
-          <p>
-            <span class="pill">Python</span>
-            <span class="pill">Flask</span>
-            <span class="pill">SQLite</span>
-            <span class="pill">HTML</span>
-            <span class="pill">JavaScript</span>
-            <span class="pill">AWS EC2</span>
-          </p>
-          <ul>
-            <li>Built a journaling interface that analyzes and visualizes sentiment over time.</li>
-            <li>Implemented CSRF protection and basic XSS safeguards to protect user input.</li>
-            <li>Deployed on a hardened EC2 instance with restricted SSH access.</li>
-          </ul>
-          <p><a class="link" href="#" target="_blank" rel="noopener noreferrer">Project link coming soon</a></p>
-        </div>
+<!-- Sentiment Analysis Web Tool — Secure Web App Project -->
+<div class="project">
+   <h3>Sentiment Analysis Web Tool — Secure Web App Project</h3>
+    <p><em>Full-stack journaling tool that tracks and visualizes mood trends over time.</em></p>
+    <p>
+      <span class="pill">Python</span>
+      <span class="pill">Flask</span>
+      <span class="pill">SQLite</span>
+      <span class="pill">TextBlob</span>
+      <span class="pill">Chart.js</span>
+      <span class="pill">AWS EC2 (Ubuntu)</span>
+      <span class="pill">UFW</span>
+      <span class="pill">SSH keys</span>
+    </p>
+    <ul>
+      <li>Developed and deployed a secure full-stack journaling app using Python, Flask, SQLite, and TextBlob to analyze and visualize user sentiment over time.</li>
+      <li>Hardened an AWS EC2 (Ubuntu) instance with UFW firewall, SSH key-only access, and least-privilege configurations to reduce exposure to attacks.</li>
+      <li>Applied secure coding practices (input validation, CSRF protection, parameterized queries) and integrated Chart.js for real-time sentiment visualization and private data storage.</li>
+    </ul>
+  </div>
 
-        <div class="project">
-          <h3>Windows Server 2022 &amp; Active Directory Lab</h3>
-          <p><em>Enterprise-style lab for identity, access, and basic hardening.</em></p>
-          <p>
-            <span class="pill">Windows Server 2022</span>
-            <span class="pill">Active Directory</span>
-            <span class="pill">DNS</span>
-            <span class="pill">DHCP</span>
-            <span class="pill">PowerShell</span>
-            <span class="pill">VirtualBox</span>
-          </p>
-          <ul>
-            <li>Configured a domain controller with DNS and DHCP for a small virtual network.</li>
-            <li>Created users/groups and applied Group Policy Objects to enforce security baselines.</li>
-            <li>Automated user creation with PowerShell scripts to reduce manual setup.</li>
-          </ul>
-          <p><a class="link" href="#" target="_blank" rel="noopener noreferrer">Lab documentation coming soon</a></p>
-        </div>
+  <!-- Static Website with Serverless Contact Form -->
+  <div class="project">
+    <h3>Static Website with Serverless Contact Form — AWS Cloud</h3>
+    <p><em>Portfolio-style static site with a serverless, secure contact workflow.</em></p>
+    <p>
+      <span class="pill">AWS S3</span>
+      <span class="pill">Lambda</span>
+      <span class="pill">SES</span>
+      <span class="pill">API Gateway</span>
+      <span class="pill">IAM</span>
+      <span class="pill">HTML</span>
+      <span class="pill">CSS</span>
+      <span class="pill">JavaScript</span>
+    </p>
+    <ul>
+      <li>Designed and deployed a static website on Amazon S3 with a responsive HTML/CSS/JS frontend and a fully functional serverless contact form.</li>
+      <li>Built a secure backend using AWS Lambda, SES, and API Gateway with CORS support, enabling real-time email delivery without traditional servers.</li>
+      <li>Managed IAM roles and automated parts of the infrastructure setup to enforce least privilege, verify SES identities, and streamline production-ready deployment.</li>
+    </ul>
+  </div>
 
-        <div class="project">
-          <h3>Ubuntu Multi-Node Cluster</h3>
-          <p><em>Linux lab for networking, SSH hardening, and firewall rules.</em></p>
-          <p>
-            <span class="pill">Ubuntu</span>
-            <span class="pill">SSH</span>
-            <span class="pill">UFW</span>
-            <span class="pill">VirtualBox</span>
-            <span class="pill">Bash</span>
-          </p>
-          <ul>
-            <li>Built a 3-node Ubuntu cluster with static IPs for predictable connectivity.</li>
-            <li>Configured SSH key-based authentication and disabled password logins.</li>
-            <li>Used UFW firewall rules to restrict inbound traffic and test port access between nodes.</li>
-          </ul>
-          <p><a class="link" href="#" target="_blank" rel="noopener noreferrer">Lab documentation coming soon</a></p>
-        </div>
-      </section>
+  <!-- Windows Server & Active Directory Lab -->
+  <div class="project">
+    <h3>Windows Server 2022 & Active Directory Lab Project</h3>
+    <p><em>Enterprise-style identity and access management lab in a virtualized environment.</em></p>
+    <p>
+      <span class="pill">Windows Server 2022</span>
+      <span class="pill">Active Directory</span>
+      <span class="pill">DNS</span>
+      <span class="pill">DHCP</span>
+      <span class="pill">RAS</span>
+      <span class="pill">PowerShell</span>
+      <span class="pill">VirtualBox</span>
+    </p>
+    <ul>
+      <li>Deployed a multi-server Windows domain environment with Primary/Replica DCs, configuring DHCP, DNS, and RAS for network and IP management.</li>
+      <li>Automated creation of 70+ AD user accounts using PowerShell and CSV, streamlining provisioning and improving accuracy.</li>
+      <li>Joined Windows 10 clients to the domain and enforced secure Group Policies while troubleshooting domain replication and scripting issues in a VirtualBox-based lab.</li>
+    </ul>
+  </div>
+
+  <!-- Ubuntu Multi-Node Cluster -->
+  <div class="project">
+    <h3>Ubuntu Multi-Node Cluster Setup (VirtualBox)</h3>
+    <p><em>Linux cluster for practicing networking, SSH hardening, and firewall rules.</em></p>
+    <p>
+      <span class="pill">Ubuntu Server</span>
+      <span class="pill">VirtualBox</span>
+      <span class="pill">Netplan</span>
+      <span class="pill">SSH</span>
+      <span class="pill">UFW</span>
+      <span class="pill">Bash</span>
+      <span class="pill">192.168.1.0/24</span>
+    </p>
+    <ul>
+      <li>Configured and deployed a secure 3-node Ubuntu server cluster in VirtualBox with NAT and internal networking on 192.168.1.0/24 using Netplan for static IPs and hostname resolution.</li>
+      <li>Automated passwordless SSH from the control node to worker nodes and implemented UFW firewall rules to improve secure remote access.</li>
+      <li>Used the lab to practice Linux administration, basic network troubleshooting, and segmentation between internal services.</li>
+    </ul>
+     
+</div>
+</section>
     </div>
   </main>
 
