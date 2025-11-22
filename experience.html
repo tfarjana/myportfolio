@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects | Tanvin Farjana</title>
+  <title>Experience | Tanvin Farjana</title>
   <style>
     :root {
       --teal: #00796b;
@@ -12,10 +12,11 @@
       --bg: #ffffff;
       --text: #1f1f1f;
     }
-  html {
-    scroll-behavior: smooth;
-  }
-    /* shared background + typography */
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -42,7 +43,7 @@
       margin: 0 auto;
     }
 
-    /* HERO SECTION (same as index) */
+    /* HERO (same as other pages) */
     .hero {
       height: 100vh;
       background-image: url("hero-cyber.jpg");
@@ -118,43 +119,36 @@
       background: #a00000;
     }
 
-    /* PAGE CONTENT STYLES (projects layout) */
+    /* MAIN CONTENT */
     main {
       padding: 2rem 1rem 3rem;
     }
+
     h2.section-title {
       border-bottom: 2px solid var(--maroon);
       padding-bottom: 0.25rem;
       margin-bottom: 0.75rem;
       color: var(--maroon);
     }
-    .project {
+
+    .experience-role {
       margin-bottom: 2rem;
     }
-    .project h3 {
+    .experience-role h3 {
       margin-bottom: 0.25rem;
       color: var(--teal);
     }
-    .pill {
-      display: inline-block;
-      background: var(--teal-light);
-      color: var(--teal);
-      padding: 0.1rem 0.5rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      margin-right: 0.3rem;
-      margin-bottom: 0.2rem;
+    .role-dates {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-style: italic;
+      color: #555;
     }
-    ul { padding-left: 1.1rem; }
-    a.link {
-      color: var(--teal);
-      text-decoration: none;
-      font-size: 0.9rem;
+
+    ul {
+      padding-left: 1.1rem;
     }
-    a.link:hover {
-      color: var(--maroon);
-      text-decoration: underline;
-    }
+
     footer {
       background: #f5f5f5;
       padding: 1rem;
@@ -162,11 +156,17 @@
       text-align: center;
       border-top: 1px solid #ddd;
     }
+
+    @media (max-width: 700px) {
+      .hero-name {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- HERO / WELCOME (shared across all pages) -->
+  <!-- HERO / WELCOME -->
   <section class="hero">
     <div class="hero-content">
       <p class="hero-tagline">Welcome to my cybersecurity portfolio</p>
@@ -181,56 +181,74 @@
         <span class="hero-pill">AWS</span>
       </div>
       <div class="hero-buttons">
-  <a href="index.html#about" class="btn-primary">Home</a>
-  <a href="projects.html#projects" class="btn-primary">Projects</a>
-  <a href="experience.html#experience" class="btn-primary">Experience</a>
-</div>
+        <a href="index.html#about" class="btn-primary">Home</a>
+        <a href="projects.html#projects" class="btn-primary">Projects</a>
+        <a href="#experience" class="btn-primary">Experience</a>
+      </div>
     </div>
   </section>
 
+  <!-- MAIN EXPERIENCE CONTENT -->
   <main>
     <div class="wrapper">
-    <div class="wrapper">
-          <section id="experience">
-      <h2 class="section-title">Professional Experience</h2>
+      <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
 
-        <div class="job">
-          <div class="job-title">Secretary / Medical Receptionist – Flex Staff @ Northwell Health</div>
-          <div class="job-meta">Jan 2025 – Present · New York, NY</div>
+        <!-- Cybersecurity Fellow -->
+        <div class="experience-role">
+          <h3>Cybersecurity Fellow – The Knowledge House</h3>
+          <p class="role-dates">January 2025 – Present · New York, NY</p>
           <ul>
-            <li>Manage 60+ daily patient calls and appointment scheduling across multiple providers.</li>
-            <li>Use Sorian, TouchWorks, and HealthPay to verify insurance and maintain accurate records.</li>
-            <li>Handle sensitive information with professionalism and attention to privacy.</li>
+            <li>Completed 400+ hours of hands-on cybersecurity and cloud training focused on threat detection, system hardening, and secure deployments in AWS and Linux.</li>
+            <li>Co-designed and implemented secure cloud labs using EC2, VPCs, S3, IAM, and Azure VMs, practicing least-privilege access and MFA across environments.</li>
+            <li>Collaborated on Agile sprint teams to build real-world infrastructure and present technical findings to peers and mentors.</li>
           </ul>
         </div>
 
-        <div class="job">
-          <div class="job-title">Intern, Investment &amp; Research – The Jasco Group (CUNY Career Launch)</div>
-          <div class="job-meta">Jul 2023 – Aug 2024 · New York, NY</div>
+        <!-- Medical Receptionist -->
+        <div class="experience-role">
+          <h3>Secretary / Medical Receptionist – Flex Staff @ Northwell Health</h3>
+          <p class="role-dates">January 2025 – Present · New York, NY</p>
           <ul>
-            <li>Researched investment opportunities and created 90-day stock performance trackers.</li>
-            <li>Drafted updates and pitched startup/film projects to mock LPs.</li>
+            <li>Manage <strong>60+ daily patient calls</strong> and coordinate appointment scheduling across multiple providers and locations.</li>
+            <li>Use Sorian, TouchWorks, and HealthPay to verify insurance, update patient records, and maintain accurate, up-to-date information.</li>
+            <li>Handle sensitive patient information with professionalism and strict attention to privacy and confidentiality.</li>
           </ul>
         </div>
 
-        <div class="job">
-          <div class="job-title">Front Desk Assistant – City College of New York</div>
-          <div class="job-meta">Jun 2023 – Jun 2024 · New York, NY</div>
+        <!-- Intern -->
+        <div class="experience-role">
+          <h3>Intern – Investment &amp; Research, The Jasco Group (CUNY Career Launch)</h3>
+          <p class="role-dates">July 2023 – August 2024 · New York, NY</p>
           <ul>
-            <li>Assisted 100+ students with course registration, scheduling, and campus navigation.</li>
-            <li>Handled phone/email inquiries and supported front office operations.</li>
+            <li>Conducted market research and created a 90-day stock performance tracker to support investment analysis.</li>
+            <li>Prepared LP update materials and pitched startup and film projects to internal stakeholders.</li>
+            <li>Explored blockchain and VC models while managing a personal brokerage account to apply new concepts.</li>
           </ul>
         </div>
 
-        <div class="job">
-          <div class="job-title">Course Support Assistant (Promoted to Lead) – City College of New York</div>
-          <div class="job-meta">Mar 2021 – Aug 2022 · New York, NY</div>
+        <!-- Front Desk Assistant -->
+        <div class="experience-role">
+          <h3>Front Desk Assistant – City College of New York</h3>
+          <p class="role-dates">June 2023 – June 2024 · New York, NY</p>
           <ul>
-            <li>Recorded and edited lecture videos for hybrid classes and events.</li>
-            <li>Led a team of support assistants during open house and graduation events.</li>
+            <li>Assisted 100+ students with course registration, appointment scheduling, and campus navigation.</li>
+            <li>Managed front desk operations, including phone/email inquiries, check-ins, and administrative support.</li>
+            <li>Maintained organized records and documentation to keep the office running smoothly.</li>
           </ul>
         </div>
 
+        <!-- Course Support Assistant -->
+        <div class="experience-role">
+          <h3>Course Support Assistant (Promoted to Lead) – City College of New York</h3>
+          <p class="role-dates">March 2021 – August 2022 · New York, NY</p>
+          <ul>
+            <li>Recorded, edited, and posted virtual lectures for 4+ professors, supporting digital and hybrid learning.</li>
+            <li>Collaborated with 7+ support assistants to design presentations for Open House and Graduation events.</li>
+            <li>Promoted to Course Assistant Leader, delegating tasks based on team strengths and improving project completion timelines.</li>
+          </ul>
+        </div>
+        <!-- Highlight: CTF -->
         <div class="highlight">
           <strong>Hack The Knowledge CTF – 1st Place (Bloomberg, 2025)</strong>
           <ul>
@@ -243,11 +261,8 @@
   </main>
 
   <footer>
-    © <span id="year"></span> Tanvin Farjana · Cybersecurity Portfolio
+    <p>&copy; 2025 Tanvin Farjana · Cybersecurity Portfolio</p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
