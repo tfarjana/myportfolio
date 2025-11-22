@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Tanvin Farjana</title>
+  <style>
+    :root {
+      --teal: #00796b;
+      --teal-light: #e0f2f1;
+      --maroon: #800000;
+      --bg: #ffffff;
+      --text: #1f1f1f;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--teal);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+    }
+    .wrapper { max-width: 960px; margin: 0 auto; }
+    header h1 { margin: 0; font-size: 1.8rem; }
+    .tagline { margin: 0.3rem 0 0.8rem; font-size: 0.95rem; color: #fdfdfd; }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-right: 1rem;
+      font-size: 0.95rem;
+    }
+    nav a.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    main { padding: 2rem 1rem 3rem; }
+    h2.section-title {
+      border-bottom: 2px solid var(--maroon);
+      padding-bottom: 0.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--maroon);
+    }
+    .project {
+      margin-bottom: 2rem;
+    }
+    .project h3 {
+      margin-bottom: 0.25rem;
+      color: var(--teal);
+    }
+    .pill {
+      display: inline-block;
+      background: var(--teal-light);
+      color: var(--teal);
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin-right: 0.3rem;
+      margin-bottom: 0.2rem;
+    }
+    ul { padding-left: 1.1rem; }
+    a.link {
+      color: var(--teal);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    a.link:hover {
+      color: var(--maroon);
+      text-decoration: underline;
+    }
+    footer {
+      background: #f5f5f5;
+      padding: 1rem;
+      font-size: 0.85rem;
+      text-align: center;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrapper">
+      <h1>Tanvin Farjana</h1>
+      <p class="tagline">Cybersecurity Projects</p>
+      <nav>
+        <a href="index.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="experience.html">Experience</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrapper">
+      <section>
+        <h2 class="section-title">Featured Projects</h2>
+
+        <div class="project">
+          <h3>Static Website with Serverless Contact Form (AWS)</h3>
+          <p><em>Security-focused serverless website with email contact workflow.</em></p>
+          <p>
+            <span class="pill">AWS S3</span>
+            <span class="pill">Lambda</span>
+            <span class="pill">SES</span>
+            <span class="pill">API Gateway</span>
+            <span class="pill">IAM</span>
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+          </p>
+          <ul>
+            <li>Hosted a static website on S3 with a serverless contact form powered by Lambda and SES.</li>
+            <li>Used API Gateway over HTTPS so messages are encrypted in transit.</li>
+            <li>Applied IAM least-privilege roles so the Lambda function only accesses the resources it needs.</li>
+          </ul>
+          <p><a class="link" href="#" target="_blank" rel="noopener noreferrer">Project link coming soon</a></p>
+        </div>
+
+        <div class="project">
+          <h3>Sentiment Analysis Web Tool</h3>
+          <p><em>Flask-based journaling app with basic security controls.</em></p>
+          <p>
+            <span class="pill">Python</span>
+            <span class="pill">Flask</span>
+            <span class="pill">SQLite</span>
+            <span class="pill">HTML</span>
+            <span class="pill">JavaScript</span>
+            <span class="pill">AWS EC2</span>
+          </p>
+          <ul>
+            <li>Built a journaling interface that analyzes and visualizes sentiment over time.</li>
+            <li>Implemented CSRF protection and basic XSS safeguards to protect user input.</li>
+            <li>Deployed on a hardened EC2 instance with restricted SSH access.</li>
+          </ul>
+          <p><a class="link" href="#" target="_blank" rel="noopener noreferrer">Project link coming soon</a></p>
+        </div>
+
+        <div class="project">
+          <h3>Windows Server 2022 &amp; Active Directory Lab</h3>
+          <p><em>Enterprise-style lab for identity, access, and basic hardening.</em></p>
+          <p>
+            <span class="pill">Windows Server 2022</span>
+            <span class="pill">Active Directory</span>
+            <span class="pill">DNS</span>
+            <span class="pill">DHCP</span>
+            <span class="pill">PowerShell</span>
+            <span class="pill">VirtualBox</span>
+          </p>
+          <ul>
+            <li>Configured a domain controller with DNS and DHCP for a small virtual network.</li>
+            <li>Created users/groups and applied Group Policy Objects to enforce security baselines.</li>
+            <li>Automated user creation with PowerShell scripts to reduce manual setup.</li>
+          </ul>
+          <p><a class="link" href="#" target="_blank" rel="noopener noreferrer">Lab documentation coming soon</a></p>
+        </div>
+
+        <div class="project">
+          <h3>Ubuntu Multi-Node Cluster</h3>
+          <p><em>Linux lab for networking, SSH hardening, and firewall rules.</em></p>
+          <p>
+            <span class="pill">Ubuntu</span>
+            <span class="pill">SSH</span>
+            <span class="pill">UFW</span>
+            <span class="pill">VirtualBox</span>
+            <span class="pill">Bash</span>
+          </p>
+          <ul>
+            <li>Built a 3-node Ubuntu cluster with static IPs for predictable connectivity.</li>
+            <li>Configured SSH key-based authentication and disabled password logins.</li>
+            <li>Used UFW firewall rules to restrict inbound traffic and test port access between nodes.</li>
+          </ul>
+          <p><a class="link" href="#" target="_blank" rel="noopener noreferrer">Lab documentation coming soon</a></p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Tanvin Farjana · Cybersecurity Portfolio
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanvin Farjana | Cybersecurity Portfolio</title>
+  <style>
+    :root {
+      --teal: #00796b;
+      --teal-light: #e0f2f1;
+      --maroon: #800000;
+      --bg: #ffffff;
+      --text: #1f1f1f;
+    }
+
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e0f7f5, #fbe4ec); /* light teal → light maroon */
+  color: var(--text);
+  line-height: 1.6;
+  position: relative;
+  min-height: 100vh;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("circuit-pattern.png"); /* change path if needed */
+  background-size: 260px 260px;  /* smaller = denser pattern, larger = lighter */
+  background-repeat: repeat;
+  opacity: 0.12;                 /* make it very light; raise to 0.18 if you want more visible */
+  pointer-events: none;
+  z-index: -1;
+}
+
+    /* HERO SECTION */
+    .hero {
+      height: 100vh;
+      background-image: url("hero-cyber.jpg"); /* <- change name/path if needed */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 1rem;
+    }
+    .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* darker, simpler overlay */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.80)
+  );
+}
+    .hero-content {
+      position: relative;
+      max-width: 700px;
+      z-index: 1;
+      /* new lines ↓ */
+  background: rgba(0, 0, 0, 0.45);
+  padding: 1.75rem 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .hero-name {
+      font-size: 2.4rem;
+      margin: 0 0 0.4rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .hero-tagline {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+      color: #f1f1f1;
+    }
+    .hero-pill {
+      display: inline-block;
+      background: rgba(224, 242, 241, 0.2);
+      border: 1px solid var(--teal-light);
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin: 0.15rem;
+    }
+    .hero-buttons {
+      margin-top: 1.5rem;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      background: var(--maroon);
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background: #a00000;
+    }
+
+    /* MAIN SECTIONS */
+    main {
+      padding: 2rem 1rem 3rem;
+      margin-top: 0; /* header is fixed, hero handles spacing */
+    }
+    .content-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2.section-title {
+      border-bottom: 2px solid var(--maroon);
+      padding-bottom: 0.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--maroon);
+    }
+    .two-column {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .two-column > div {
+      flex: 1 1 260px;
+    }
+    ul {
+      padding-left: 1.1rem;
+    }
+    .highlight {
+      background: var(--teal-light);
+      border-left: 4px solid var(--teal);
+      padding: 1rem;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+    .contact-links a {
+      color: var(--teal);
+      text-decoration: none;
+      margin-right: 0.75rem;
+    }
+    .contact-links a:hover {
+      color: var(--maroon);
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #f5f5f5;
+      padding: 1rem;
+      font-size: 0.85rem;
+      text-align: center;
+      border-top: 1px solid #ddd;
+    }
+
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 1.2rem;
+      }
+      nav a {
+        margin-left: 0.6rem;
+        font-size: 0.85rem;
+      }
+      .hero-name {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO / WELCOME -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-tagline">Welcome to my cybersecurity portfolio</p>
+      <h2 class="hero-name">Tanvin Farjana</h2>
+      <p class="hero-tagline">
+        Aspiring Cybersecurity Analyst · Linux &amp; Active Directory · Cloud Security Learner
+      </p>
+      <div>
+        <span class="hero-pill">CTF Winner (Bloomberg 2025)</span>
+        <span class="hero-pill">Linux</span>
+        <span class="hero-pill">Windows AD</span>
+        <span class="hero-pill">AWS</span>
+      </div>
+      <div class="hero-buttons">
+  <a href="#about" class="btn-primary">Home</a>
+  <a href="projects.html" class="btn-primary">Projects</a>
+  <a href="experience.html" class="btn-primary">Experience</a>
+</div>
+
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT (scroll down from hero) -->
+  <main>
+    <div class="content-wrapper">
+      <section id="about">
+        <h2 class="section-title">About Me &amp; Career Goals</h2>
+        <p>
+          I’m a cybersecurity analyst in training at The Knowledge House with a strong foundation in Linux,
+          Windows, threat detection, and network security tools. I won first place in the 2025
+          <strong>Hack The Knowledge</strong> CTF hackathon hosted with Bloomberg.
+        </p>
+        <p>
+          I’m focused on entry-level roles such as <strong>Cybersecurity Analyst</strong> or
+          <strong>SOC Analyst</strong>, where I can secure real-world systems, deepen my cloud security skills,
+          and contribute to a collaborative, mission-driven security team.
+        </p>
+      </section>
+
+      <section class="two-column">
+        <div>
+          <h2 class="section-title">Technical Focus</h2>
+          <ul>
+            <li>Linux system administration (Ubuntu, Kali)</li>
+            <li>Windows Server &amp; Active Directory labs</li>
+            <li>Network analysis with Wireshark, Nmap, Burp Suite</li>
+            <li>Basic cloud security on AWS (S3, EC2, IAM, Lambda)</li>
+            <li>Secure web apps with Python/Flask</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="section-title">Education</h2>
+          <p><strong>The Knowledge House</strong> – Innovation Fellowship in Cybersecurity (Expected Dec 2025)</p>
+          <ul>
+            <li>400+ hours of labs in Linux, networking, cloud, and SOC workflows</li>
+            <li>Hands-on practice with Kali, Metasploit, Wireshark, Git/GitHub</li>
+          </ul>
+          <p><strong>The City College of New York</strong> – B.S. in Chemistry, Minor in Psychology (GPA 3.65)</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Highlights</h2>
+        <div class="highlight">
+          <ul>
+            <li>🥇 1st Place – Hack The Knowledge CTF Hackathon (Bloomberg, 2025)</li>
+            <li>Built secure labs in both Linux and Windows AD environments</li>
+            <li>Committed to earning CompTIA Security+, Network+, and AWS Security certifications</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Contact</h2>
+        <p class="contact-links">
+          <a href="mailto:tfarjana000@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/tanvin-f-1563a0214/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/tfarjana" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Tanvin Farjana · Cybersecurity Portfolio
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
