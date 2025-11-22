@@ -154,7 +154,7 @@ _Group capstone building a privacy-first cloud platform for reproductive and men
 ### Secretary / Medical Receptionist – Flex Staff @ Northwell Health  
 **Jan 2025 – Present | New York, NY**  
 
-- Handle ~**40+ daily calls** from patients, coordinating appointments across multiple providers and locations.  
+- Handle ~**60+ daily calls** from patients, coordinating appointments across multiple providers and locations.  
 - Use tools like **Sorian, TouchWorks, and HealthPay** to verify insurance and maintain accurate, HIPAA-conscious records.  
 - Perform scheduling, cancellations, and secure communications (fax/email) to support clinical workflows.  
 
